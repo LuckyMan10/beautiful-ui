@@ -1,0 +1,6 @@
+mixin date-dropdown(args)
+    - var {singleMode, rootId, inputId, placeholder, title= "date dropdown"} = args 
+    .date-dropdown(class=`js-date-dropdown dropdown-disable ${singleMode ? "dropdown-singe" : ""}` id= rootId)
+        h3.date-dropdown__title= title 
+        input.date-dropdown__input(id= inputId, placeholder= placeholder, readonly=true, autocomplete="off")
+        span.date-dropdown__arrow(class="js-dropdown__arrow")

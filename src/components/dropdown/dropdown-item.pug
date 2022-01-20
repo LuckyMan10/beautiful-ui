@@ -1,0 +1,10 @@
+mixin dropdown-item(args)
+    - var {title, value, id} = args
+    .dropdown-item(id= id) 
+        h3.dropdown-item__title= title
+        .dropdown-item__counter 
+            button.dropdown-item__increment -
+            .dropdown-item__current= value
+            button.dropdown-item__decrement +
+        
+

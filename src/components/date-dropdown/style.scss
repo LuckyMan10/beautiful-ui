@@ -1,0 +1,96 @@
+@mixin arrow($rotate) {
+  z-index: 10;
+  border-bottom: 2px solid #999;
+  border-right: 2px solid #999;
+  content: "";
+  display: block;
+  height: 6px;
+  margin-top: -4px;
+  pointer-events: none;
+  position: absolute;
+  right: 18px;
+  top: 65%;
+  -webkit-transform-origin: 66% 66%;
+  -ms-transform-origin: 66% 66%;
+  transform-origin: 66% 66%;
+  -webkit-transform: rotate($rotate);
+  -ms-transform: rotate($rotate);
+  transform: rotate($rotate);
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  width: 6px;
+}
+
+.date-dropdown {
+  max-width: 266px;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  &__title {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(31, 32, 65, 1);
+    margin-bottom: 5px;
+  }
+  &__input {
+    position: relative;
+    z-index: 5;
+    max-width: 100%;
+    max-height: 44px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.5);
+    outline: none;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    &:hover,
+    &:focus {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      transition: 0.3s;
+    }
+  }
+  &__arrow {
+    position: absolute;
+    top: 70%;
+  }
+}
+.date-dropdown.dropdown-singe {
+  max-width: 150px;
+}
+
+.date-dropdown.dropdown-disable {
+  .date-dropdown__arrow:after {
+    @include arrow(45deg);
+  }
+}
+.date-dropdown.dropdown-active {
+  .date-dropdown__arrow:after {
+    @include arrow(-135deg);
+  }
+}
+
+.litepicker.litepicker.litepicker {
+  .month-item-weekdays-row > * {
+    color: rgba(188, 156, 255, 1);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .day-item {
+    font-weight: 700;
+    color:rgba(31, 32, 65, 0.8);
+    cursor: pointer;
+    &:hover {
+      box-shadow: inset 0 0 0 1px rgba(188, 156, 255, 1);
+    }
+  }
+  .is-start-date, .is-end-date {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    color: white;
+  }
+  .button-next-month, .button-previous-month {
+    cursor: pointer;
+  }
+}

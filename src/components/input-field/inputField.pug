@@ -1,0 +1,22 @@
+mixin input-field(args)
+    - var {placeholder, title, type, name, value, inputId, condition= "", isMasked= false, maskedType= null} = args
+    .input-field(class="js-input-field")
+        if title
+                h3.input-field__title= title
+        if isMasked
+            input.input-field__input(
+                class= "input-field__input--masked",
+                data-masked= maskedType,
+                id= inputId,
+                type= type,
+                name= name,
+                value= value,
+                placeholder= placeholder
+            )
+        if !isMasked
+            input.input-field__input(
+                type= type,
+                name= name,
+                value= value,
+                placeholder= placeholder
+            )

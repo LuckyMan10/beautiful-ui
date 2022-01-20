@@ -1,0 +1,91 @@
+include ../../components/input-field/inputField.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/dateDropdown.pug
+
+main
+    +input-field({
+        placeholder: "ДД.ММ.ГГГГ",
+        title: "masked text field",
+        type: "text",
+        name: "date-field",
+        value: "",
+        inputId: "input-field-id-1",
+        isMasked: true,
+        maskedType: "datePattern_1"
+    })
+    +input-field({
+        placeholder: "Email",
+        title: "text field",
+        type: "text",
+        name: "email-field",
+        value: "",
+        inputId: "input-field-id-2",
+        isMasked: false
+    })
+    +dropdown({
+        isClearBtn: true,
+        isApplyBtn: true,
+        clearBtnId: 'clear-btn-id-1',
+        applyBtnId: 'apply-btn-id-1',
+        inputId: 'dropdown-input-id-1',
+        rootId: 'dropdown-root-id-1',
+        inputValue: "",
+        name: "dropdown-name",
+        placeholder: "Сколько гостей?",
+        items: [
+            {
+                title: "взрослые",
+                value: 0,
+                id: "f34tf3"
+            },
+            {
+                title: "дети",
+                value: 0,
+                id: "asodkk9"
+            },
+            {
+                title: "младенцы",
+                value: 0,
+                id: "askd97i"
+            }
+        ]
+    })
+    +dropdown({
+        isApplyBtn: true,
+        clearBtnId: 'clear-btn-id-2',
+        applyBtnId: 'apply-btn-id-2',
+        inputId: 'dropdown-input-id-2',
+        rootId: 'dropdown-root-id-2',
+        inputValue: "",
+        name: "dropdown-name",
+        placeholder: "Сколько гостей?",
+        items: [
+            {
+                title: "взрослые",
+                value: 0,
+                id: "f34tvc3"
+            },
+            {
+                title: "дети",
+                value: 0,
+                id: "asodbk9"
+            },
+            {
+                title: "младенцы",
+                value: 0,
+                id: "askdmn7i"
+            }
+        ]
+    })
+    +date-dropdown({
+        singleMode: true,
+        rootId: "date-dropdown-id-1",
+        inputId: "date-dropdown-input-id-1",
+        placeholder: "ДД.ММ.ГГГГ",
+    })
+    +date-dropdown({
+        singleMode: false,
+        rootId: "date-dropdown-id-2",
+        inputId: "date-dropdown-input-id-2",
+        placeholder: "ДД.ММ.ГГГГ",
+    })

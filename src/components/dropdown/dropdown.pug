@@ -1,0 +1,23 @@
+include ./dropdown-item.pug
+
+mixin dropdown(args)
+    - var {items= [], title= "dropdown", rootId, isClearBtn= false, isApplyBtn= false, clearBtnId, applyBtnId, inputId, inputValue, name, placeholder} = args
+    .dropdown(id= rootId, class="js-dropdown dropdown-disable")
+        h3.dropdown__title= title
+        input.dropdown__input(id= inputId, value= inputValue, name, placeholder= placeholder)
+        span.dropdown__arrow(class="js-dropdown__arrow")
+        .dropdown__dropdown(class="js-dropdown__dropdown") 
+            .dropdown__list
+                each item in items
+                    +dropdown-item({
+                        title: item.title,
+                        value: item.value,
+                        id: item.id
+                    })
+            if isClearBtn || isApplyBtn
+                .dropdown__buttons(class="js-dropdown__buttons") 
+                    if isClearBtn 
+                        button.dropdown__clear(id= clearBtnId) очистить
+                    if isApplyBtn
+                        button.dropdown__apply(id= applyBtnId) применить
+
