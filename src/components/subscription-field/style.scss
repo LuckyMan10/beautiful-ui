@@ -1,0 +1,61 @@
+@import "../common/mixins.scss";
+
+.subscription-field {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  max-width: 266px;
+  &__input {
+    @include input(266px);
+    padding-right: 40px;
+  }
+  &__title {
+      @include title();
+  }
+  &__form {
+    position: relative;
+  }
+  &__submit {
+    background: -webkit-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 44px;
+    height: 44px;
+    bottom: 0;
+    position: absolute;
+    z-index: 11;
+    border: none;
+    cursor: pointer;
+    right: 0;
+    .material-icons {
+      font-family: "Material Icons";
+      font-weight: normal;
+      font-style: normal;
+      font-size: 30px;
+      margin-left: 3px;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "liga";
+    }
+  }
+
+  .submit {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(0.7);
+  }
+}

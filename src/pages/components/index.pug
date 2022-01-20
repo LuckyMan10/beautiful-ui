@@ -1,6 +1,8 @@
 include ../../components/input-field/inputField.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/dateDropdown.pug
+include ../../components/subscription-field/subscriptionField.pug
+include ../../components/checkbox-buttons/checkboxButtons.pug
 
 main
     +input-field({
@@ -85,7 +87,20 @@ main
     })
     +date-dropdown({
         singleMode: false,
+        title: "filter date dropdown",
         rootId: "date-dropdown-id-2",
         inputId: "date-dropdown-input-id-2",
         placeholder: "ДД.ММ.ГГГГ",
+    })
+    +subscription-field({
+        title: "subscription text field",
+        rootId: "subscription-field-id-1",
+        placeholder: "Email"
+    })
+    +checkbox-buttons({
+        items: [
+            {name: "Можно курить", id: "asd32322"},
+            {name: "Можно c питомцами", id: "asd32xcv2"},
+            {name: "Можно пригласить гостей (до 10 человек)", id: "asd32cnrt2"}
+        ]
     })

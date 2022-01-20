@@ -1,0 +1,10 @@
+include ./checkboxItem.pug
+
+mixin checkbox-buttons(args)
+    - var {items, title= "checkbox buttons"} = args
+    .checkbox-buttons
+        .checkbox-buttons__title= title
+        ul.checkbox-buttons__list
+            each item in items 
+                +checkbox-item({name: item.name, checkboxId: item.id})
+

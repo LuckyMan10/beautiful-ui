@@ -1,0 +1,6 @@
+mixin checkbox-item(args)
+    - var {name, checkboxId} = args 
+    li.checkbox-item(class="js-checkbox-item", id= checkboxId)
+        .checkbox-item__button
+            button(type="checkbox")
+        span.checkbox-item__title(id= checkboxId)= name

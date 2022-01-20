@@ -1,0 +1,8 @@
+mixin subscription-field(args)
+    - var {rootId, placeholder, title} = args
+    .subscription-field(id= rootId, class= "js-subscription-field")
+        h3.subscription-field__title= title
+        form.subscription-field__form(class= "js-subscription-field__form")
+            input(class= "subscription-field__input", placeholder= placeholder)
+            button(class= "subscription-field__submit")
+                span(class="material-icons")="arrow_forward"
