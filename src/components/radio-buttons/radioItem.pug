@@ -1,0 +1,8 @@
+mixin radio-item(args)
+    - var {title, name} = args 
+    li.radio-item
+        label.radio
+            input.radio__input(type="radio" name= name)
+            .radio__box 
+                span.radio__check-symbol
+            span.radio__title= title

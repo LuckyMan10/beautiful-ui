@@ -1,0 +1,12 @@
+include ./radioItem.pug
+
+mixin radio-buttons(args)
+    - var {items, title= "radio buttons"} = args 
+    .radio-buttons 
+        .radio-buttons__title= title
+        ul.radio-buttons__list
+            each item in items
+                +radio-item({
+                    name: item.name,
+                    title: item.title
+                }) 

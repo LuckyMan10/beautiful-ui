@@ -3,6 +3,7 @@ include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/dateDropdown.pug
 include ../../components/subscription-field/subscriptionField.pug
 include ../../components/checkbox-buttons/checkboxButtons.pug
+include ../../components/radio-buttons/radioButtons.pug
 
 main
     +input-field({
@@ -102,5 +103,11 @@ main
             {name: "Можно курить", id: "asd32322"},
             {name: "Можно c питомцами", id: "asd32xcv2"},
             {name: "Можно пригласить гостей (до 10 человек)", id: "asd32cnrt2"}
+        ]
+    })
+    +radio-buttons({
+        items: [
+            {title: "Мужчина", name: "gender"},
+            {title: "Женщина", name: "gender"}
         ]
     })

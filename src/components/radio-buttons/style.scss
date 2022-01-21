@@ -1,0 +1,70 @@
+@import "../common/mixins.scss";
+
+.radio-buttons {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  max-width: 240px;
+  &__title {
+    @include title();
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    .radio-item {
+      .radio {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        &__input {
+          position: absolute;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+        &__check-symbol {
+          display: block;
+          top: 0;
+          left: 0;
+          width: 70%;
+          height: 70%;
+          border-radius: 100%;
+        }
+        &__box {
+          margin-left: -1.2em;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-color: white;
+          border: 1px solid rgba(31, 32, 65, 0.25);
+          border-radius: 100%;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        &__title {
+          cursor: pointer;
+          color: rgba(31, 32, 65, 0.5);
+          line-height: 18px;
+          font-weight: 400;
+          font-size: 14px;
+          margin-left: 10px;
+          &:hover {
+            color: rgba(31, 32, 65, 0.75);
+          }
+        }
+      }
+      .radio__input:checked ~ div {
+        border: 1px solid rgba(188, 156, 255, 1);
+        .radio__check-symbol {
+          background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        }
+      }
+      .radio__input:checked ~ span {
+        color: rgba(31, 32, 65, 0.75);
+      }
+    }
+  }
+}
