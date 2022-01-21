@@ -1,0 +1,71 @@
+@import "../common/mixins.scss";
+
+.toggle-buttons {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    &__title {
+        @include title();
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        .toggle-item {
+            .toggle {
+                display: flex;
+                align-items: center;
+                margin-left: 21px;
+                &__input {
+                    position: absolute;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                }
+                &__box {
+                    cursor: pointer;
+                    margin-left: -1.2em;
+                    position: absolute;
+                    width: 40px;
+                    height: 20px;
+                    padding: 0px 3px;
+                    background-color: white;
+                    border: 1px solid rgba(31, 32, 65, 0.25);
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+                &__round {
+                    cursor: pointer;
+                    display: block;
+                    position: relative;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: rgba(31, 32, 65, 0.25);
+                }
+                &__title {
+                    cursor: pointer;
+                    color: rgba(31, 32, 65, 0.5);
+                    line-height: 18px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    margin-left: 31px;
+                    &:hover {
+                      color: rgba(31, 32, 65, 0.75);
+                    }
+                }
+            }
+            .toggle__input:checked + .toggle__box {
+                justify-content: flex-end;
+                border: 1px solid rgba(188, 156, 255, 1);
+                .toggle__round {
+                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                }
+            }
+        }
+    }
+}

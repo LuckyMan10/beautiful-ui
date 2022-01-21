@@ -46,13 +46,15 @@
           box-sizing: border-box;
           display: flex;
           justify-content: center;
+          align-items: center;
         }
         &__check-symbol {
           display: block;
           top: 0;
           left: 0;
-          width: 70%;
-          height: 70%;
+          margin-bottom: 2px;
+          width: 55%;
+          height: 55%;
         }
       }
       .checkbox__input:checked + .checkbox__box > .checkbox__check-symbol {

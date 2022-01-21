@@ -1,0 +1,8 @@
+mixin toggle-item(args)
+    - var {title} = args
+    li.toggle-item 
+        label.toggle
+            input.toggle__input(type="checkbox")
+            .toggle__box
+                span.toggle__round 
+            span.toggle__title= title

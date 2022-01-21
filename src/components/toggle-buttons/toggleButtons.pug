@@ -1,0 +1,11 @@
+include ./toggleItem.pug
+
+mixin toggle-buttons(args)
+    - var {items, title= "toggle"} = args
+    .toggle-buttons 
+        .toggle-buttons__title= title
+        ul.toggle-buttons__list
+            each item in items 
+                +toggle-item({
+                    title: item.title
+                })

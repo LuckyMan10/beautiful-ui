@@ -4,6 +4,7 @@ include ../../components/date-dropdown/dateDropdown.pug
 include ../../components/subscription-field/subscriptionField.pug
 include ../../components/checkbox-buttons/checkboxButtons.pug
 include ../../components/radio-buttons/radioButtons.pug
+include ../../components/toggle-buttons/toggleButtons.pug
 
 main
     +input-field({
@@ -109,5 +110,15 @@ main
         items: [
             {title: "Мужчина", name: "gender"},
             {title: "Женщина", name: "gender"}
+        ]
+    })
+    +toggle-buttons({
+        items: [
+            {
+                title: "Получать спецпредложения"
+            },
+            {
+                title: "Получать спецпредложения"
+            }
         ]
     })
