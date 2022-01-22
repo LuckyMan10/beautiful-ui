@@ -7,6 +7,10 @@ const path = require("path");
 const liveReloadOptions = {
   appendScriptTag: true,
 };
+const PATHS = {
+  src: path.resolve(__dirname, "./src"),
+  dist: path.join(__dirname, "./dist")
+}
 
 module.exports = {
   mode: "development",
@@ -19,9 +23,10 @@ module.exports = {
   },
   resolve: {
     modules: ["node_modules"],
-    extensions: [".js"],
+    extensions: [".js", ".svg"],
     alias: {
       jquery: require.resolve("jquery"),
+      "~logo": path.resolve("./src/components/logo-icon/icon") 
     },
   },
   plugins: [
@@ -52,6 +57,17 @@ module.exports = {
       {
         test: /\.scss$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|jpg|jpeg|svg|gif)$/i,
+        include: [`${PATHS.src}/components`],
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[contenthash].[ext]',
+            outputPath: 'img',
+          },
+        },
       },
       {
         test: /\.css$/i,

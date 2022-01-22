@@ -1,5 +1,4 @@
-include ./pages/components/index.pug
-
+include ./pages/colors-type/index.pug
 
 doctype html
 html
@@ -9,4 +8,63 @@ html
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         link(rel='stylesheet' type="text/css" href='main.css')
     body
-        main
+        +colors({
+            color: [
+                {
+                    name: "Dark Shade 100%",
+                    code: "1F2041",
+                    opacity: 100
+                },
+                {
+                    name: "Dark Shade 75%",
+                    code: "1F2041",
+                    opacity: 75
+                },
+                {
+                    name: "Dark Shade 50%",
+                    code: "1F2041",
+                    opacity: 50
+                },
+                {
+                    name: "Dark Shade 25%",
+                    code: "1F2041",
+                    opacity: 25
+                },
+                {
+                    name: "Dark Shade 5%",
+                    code: "1F2041",
+                    opacity: 5
+                },
+                {
+                    name: "Purple",
+                    code: "BC9CFF"
+                },
+                {
+                    name: "Green",
+                    code: "6FCF97"
+                }
+            ],
+            text: [
+                {
+                    attr: "H1",
+                    appearance: "This one is the sub-section or widget title",
+                    size: 24
+                },
+                {
+                    attr: "H2",
+                    appearance: "Next one is the item title inside widgets",
+                    size: 19
+                },
+                {
+                    attr: "H3",
+                    appearance: "This is a label or cta text",
+                    size: 12
+                },
+                {
+                    attr: "Body",
+                    appearance: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+                    size: 14
+                }
+            ]
+        })
+        include ./pages/components/index.pug

@@ -6,4 +6,6 @@ import "./components/checkbox-buttons/index";
 import "./components/radio-buttons/index";
 import "./components/toggle-buttons/index";
 
+import "./pages/colors-type/style.scss";
+
 import "./app.scss";

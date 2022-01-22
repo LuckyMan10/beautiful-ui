@@ -1,0 +1,10 @@
+include ./colorsType.pug
+include ../../components/logo-icon/index.pug
+
+mixin colors(args)
+    .colors
+        .colors__wrapper
+            .colors__header
+                +logo-icon()
+            .colors__main
+                +colors-type(args)

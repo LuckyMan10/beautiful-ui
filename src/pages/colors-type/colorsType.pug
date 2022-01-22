@@ -1,0 +1,20 @@
+mixin colors-type(args)
+    - var {color, text} = args
+    .colors-type
+        .colors-type__wrapper
+            .colors-type__col(class= "col-1")
+                each colorItem in color 
+                    .colors-type__row
+                        .color 
+                            span.color__color-block(class= `color-${colorItem.code} opacity-${colorItem.opacity}`) 
+                            .color__description
+                                h3.color__name= colorItem.name 
+                                p.color__code= `#${colorItem.code}`
+            .colors-type__col(class= "col-2")
+                each textItem in text 
+                    .colors-type__row
+                        .text(class= `size-${textItem.size}`)
+                            .text__col     
+                                span.text__text-attr= textItem.attr
+                            .text__col
+                                span.text__text-appearance= textItem.appearance
