@@ -1,0 +1,18 @@
+mixin rate-button(args)
+    - var {buttons, title= "rate button"} = args
+    - var i = 0
+    fieldset.rating
+        legend.rating__title= title
+        .rating__groups
+            each button in buttons
+                .rating__group
+                    while i < button.stars
+                        - var isChecked = (i+1) === button.value
+                        input.rating__star(
+                            type= "radio",
+                            name= button.name,
+                            value= i,
+                            checked= isChecked
+                        )
+                        - i++
+                    - i = 0;

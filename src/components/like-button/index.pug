@@ -1,0 +1,12 @@
+include ./likeButton.pug
+
+mixin like-buttons(args)
+    - var {buttons, title= "like button"} = args
+    .like-buttons 
+        h3.like-buttons__title= title
+        .like-buttons__buttons 
+            each button in buttons 
+                +like-button({
+                    value: button.value,
+                    isActive: button.isActive
+                })

@@ -5,6 +5,8 @@ include ../../components/subscription-field/subscriptionField.pug
 include ../../components/checkbox-buttons/checkboxButtons.pug
 include ../../components/radio-buttons/radioButtons.pug
 include ../../components/toggle-buttons/toggleButtons.pug
+include ../../components/like-button/index.pug
+include ../../components/rate-button/rateButton.pug
 
 .components
     +input-field({
@@ -119,6 +121,32 @@ include ../../components/toggle-buttons/toggleButtons.pug
             },
             {
                 title: "Получать спецпредложения"
+            }
+        ]
+    })
+    +like-buttons({
+        buttons: [
+            {
+                value: 2,
+                isActive: false
+            },
+            {
+                value: 12,
+                isActive: true
+            }
+        ]
+    })
+    +rate-button({
+        buttons: [
+            {
+                name: "rate-button-1",
+                stars: 5,
+                value: 4
+            },
+            {
+                name: "rate-button-2",
+                stars: 5,
+                value: 5
             }
         ]
     })
